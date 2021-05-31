@@ -1,50 +1,76 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
+import React from 'react'
+import { Link as GatsbyLink } from 'gatsby'
+import styled from 'styled-components'
 import Email from './../../../images/email.svg'
 import Phone from './../../../images/phone.svg'
 
 // STYLES
-const links = {
-    color: 'inherit',
-    textDecoration: 'none'
-}
+const StyledLink = styled(GatsbyLink)`
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: inherit;
+    color: #fff;
+    border-right: 2px solid #fff;
+    padding: 2px 10px;
 
-const colorMain = {
-    color: '#c0c0c0',
-}
+    :last-of-type {
+        border-right: none;
+    }
+`;
 
-const colorMinor = {
-    color: '#00f'
-}
+const Nav = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+`;
+
+const An = styled.a`
+    text-decoration: none;
+    color: #fff;
+    disply: flex;
+    align-items: center;
+`;
+
+const Img = styled.img`
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+`;
+
+const Span = styled.span`
+    font-size: 12px;
+    font-weight: 500;
+    font-family: inherit;
+    color: #fff;
+    margin-right: 15px;
+
+    :last-of-type {
+        margin-right: none;
+    }
+`;
 
 // MARKUP
-const TopNav = (props) => {
-    let color;
-
-    if (props.home) {
-        color = colorMain
-    } else {
-        color = colorMinor
-    }
-
+const TopNav = () => {
     return(
-        <div style={color}>
+        <Nav>
             <div>
-                <a href="malto:younggeeks@gmail.com">
-                    <img src={Email} alt="Email Icon" />
-                    <span>younggeeks@gmail.com</span>
-                </a>
-                <a href="call:+255 764 649 881">
-                    <img src={Phone} alt="Phone Icon" />
-                    <span>+255 764 649 881</span>
-                </a>
+                <An href="malto:younggeeks@gmail.com">
+                    <Img src={Email} alt="Email Icon" />
+                    <Span>younggeeks@gmail.com</Span>
+                </An>
+                <An href="call:+255 764 649 881">
+                    <Img src={Phone} alt="Phone Icon" />
+                    <Span>+255 764 649 881</Span>
+                </An>
             </div>
             <div>
-                <Link style={links} to="/career">Career</Link>
-                <Link style={links} to="/ContactUs">Contact Us</Link>
-                <Link style={links} to="/news">News</Link>
+                <StyledLink to="/career">Career</StyledLink>
+                <StyledLink to="/ContactUs">Contact Us</StyledLink>
+                <StyledLink to="/news">News</StyledLink>
             </div>
-        </div>
+        </Nav>
     )
 }
 

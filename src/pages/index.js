@@ -7,6 +7,7 @@ import Overrall from "../components/Overrall"
 const HomePage = () => {
   return(
     <main>
+      <title>YoungGeeks</title>
       <Overrall />
       <Hero>
         <Navigation home />

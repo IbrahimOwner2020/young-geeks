@@ -5,6 +5,7 @@ import Overrall from '../components/Overrall'
 const AboutUs = () => {
     return(
         <main>
+            <title>About || YoungGeeks</title>
             <Overrall />
             <Navigation />
         </main>

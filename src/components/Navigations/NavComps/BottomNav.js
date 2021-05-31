@@ -1,63 +1,97 @@
-import * as React from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 // STYLES
-const nav = {
-    backgroundColor: '#fff',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderRadius: '7px',
-    padding: '5px 8px'
-}
+const Nav = styled.div`
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 7px;
+    padding: 10px;
+`
 
+const Li = styled.li` 
+    text-decoration: none;
+    margin-right: 35px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    color: #042565;
+    transition: all .2s;
+
+    :hover,
+    :active {
+        color: #0085FF;
+    }
+`
 const link = {
     textDecoration: 'none',
-    margin: '10px',
-    fontFamily: 'inherit',
-    fontWeight: '500',
-    fontSize: '15px',
-    lineHeight: '22px',
-    color: '#042565'
+    color: 'currentColor'
 }
 
-const list = {
-    listStyle: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    margin: '0'
-}
+const Ul = styled.ul`
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+`
 
-const title = {
-    fontSize: '20px',
-    margin: '0',
-    fontWeight:'500',
-    fontFamily: 'inherit',
-    color: '#042565'
-}
+const H3 = styled.h3`
+    font-size: 23px;
+    margin: 0;
+    font-weight: 500;
+    font-family: inherit;
+    color: #042565;
+`
 
-const title2 = {
-    fontWeight: '700'
-}
+const Span = styled.span`
+    font-weight: 700;
+`
+
+const Button = styled.button`
+    cursor: pointer;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #0085FF;
+    border-radius: 3px;
+    padding: 16px 20px;
+    border: none;
+    margin-left: 30px;
+
+    :hover {
+        background-color: #042565;
+    }
+`
+
+const Div = styled.div`
+    margin-left: auto;
+`
 
 // MARKUP
 const BottomNav = () => {
     return(
         <div>
-            <div style={nav}>
-                <Link style={link} to="/"><h3 style={title}>Young<span style={title2}>Geeks</span></h3></Link>
-                <div>
-                    <ul style={list}>
-                        <li><Link style={link} to="/">Home</Link></li>
-                        <li><Link style={link} to="/aboutUs">About</Link></li>
-                        <li><Link style={link} to="/services">Services</Link></li>
-                        <li><Link style={link} to="/portfolio">Portfolio</Link></li>
-                        <li><Link style={link} to="/blog">Blog</Link></li>
-                        <li><Link style={link} to="/contactUs">Contact Us</Link></li>
-                    </ul>
-                </div>
-                <div><button>Request a Quote</button></div>
-            </div>
+            <Nav>
+                <Link style={link} to="/">
+                    <H3>Young<Span>Geeks</Span></H3>
+                </Link>
+                <Div>
+                    <Ul>
+                        <Li><Link style={link} activeStyle={{ color: "#0085ff" }} to="/">Home</Link></Li>
+                        <Li><Link style={link} activeStyle={{ color: "#0085ff" }} to="/aboutUs">About</Link></Li>
+                        <Li><Link style={link} activeStyle={{ color: "#0085ff" }} to="/services">Services</Link></Li>
+                        <Li><Link style={link} activeStyle={{ color: "#0085ff" }} to="/portfolio">PortfoLio</Link></Li>
+                        <Li><Link style={link} activeStyle={{ color: "#0085ff" }} to="/blog">Blog</Link></Li>
+                        <Li><Link style={link} activeStyle={{ color: "#0085ff" }} to="/contactUs">Contact Us</Link></Li>
+                    </Ul>
+                </Div>
+                <div><Button>Request a Quote</Button></div>
+            </Nav>
         </div>
     )
 }
