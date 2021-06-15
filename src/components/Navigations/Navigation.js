@@ -7,6 +7,10 @@ import TopNav from "./NavComps/TopNav"
 const Nav = styled.nav`
     max-width: 1100px;
     margin: 0 auto;
+
+    @media (max-width: 1132px) {
+        margin: 0 16px;
+    }
 `
 
 // MARKUPS

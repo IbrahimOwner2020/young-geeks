@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import PhoneNav from './PhoneNav';
 
 // STYLES
 const Nav = styled.div`
@@ -10,7 +11,7 @@ const Nav = styled.div`
     justify-content: space-between;
     border-radius: 7px;
     padding: 10px;
-`
+`;
 
 const Li = styled.li` 
     text-decoration: none;
@@ -26,7 +27,8 @@ const Li = styled.li`
     :active {
         color: #0085FF;
     }
-`
+`;
+
 const link = {
     textDecoration: 'none',
     color: 'currentColor'
@@ -66,11 +68,32 @@ const Button = styled.button`
     :hover {
         background-color: #042565;
     }
-`
+
+    @media (max-width: 932px) {
+        display: none;
+        visibility: hidden;
+    }
+`;
 
 const Div = styled.div`
     margin-left: auto;
-`
+
+    @media (max-width: 932px) {
+        display: none;
+        visibility: hidden;
+    }
+`;
+
+const Div2 = styled.div`
+    margin-left: auto;
+    display: none;
+    visibility: hidden;
+
+    @media (max-width: 932px) {
+        display: block;
+        visibility: visible;
+    }
+`;
 
 // MARKUP
 const BottomNav = () => {
@@ -91,6 +114,7 @@ const BottomNav = () => {
                     </Ul>
                 </Div>
                 <div><Button>Request a Quote</Button></div>
+                <Div2><PhoneNav /></Div2>
             </Nav>
         </div>
     )

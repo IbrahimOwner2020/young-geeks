@@ -24,6 +24,11 @@ const Nav = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
+
+    @media (max-width: 550px) {
+        display: none;
+        visibility: hidden;
+    }
 `;
 
 const An = styled.a`
